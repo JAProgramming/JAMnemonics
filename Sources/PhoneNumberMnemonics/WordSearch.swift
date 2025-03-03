@@ -27,7 +27,8 @@ public func letters(for phoneNumber: String) -> [[String]] {
 // ["acd", "ace" "bcd", "bce"]
 public func permutations(of arrays: [[String]]) -> [String] {
     // YOU FILL IN HERE
-    return [""]
+    return arrays.reduce([""]) {result, nextStep in nextStep.flatMap { last in nextStep.map(last + $0)}}
+
 }
 
 // Finds all of the possible strings of characters that a phone number
