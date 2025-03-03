@@ -27,7 +27,8 @@ public func letters(for phoneNumber: String) -> [[String]] {
 // ["acd", "ace" "bcd", "bce"]
 public func permutations(of arrays: [[String]]) -> [String] {
     // YOU FILL IN HERE
-    return arrays.reduce([""]) {result, nextStep in nextStep.flatMap { last in nextStep.map(last + $0)}}
+    // had some help with chat gpt on the structure of higher order functions
+    return arrays.reduce([""]) {result, nextStep in nextStep.flatMap { last in nextStep.map {last + $0}}}
 
 }
 
