@@ -6,9 +6,9 @@ import Foundation
 // YOU FILL IN HERE
 // Feel free to put in additional utility code as long as you have
 // no loops, no *mutable* global variables, and no custom classes.
-let dialNumbers [character [Strings]] =  ["2": ["A", "B", "C"], "3": ["D", "E", "F"], "4": ["G", "H", "I"], "5": ["J", "K", "L"],
+let dialNumbers: [Character: [Strings]] =  ["2": ["A", "B", "C"], "3": ["D", "E", "F"], "4": ["G", "H", "I"], "5": ["J", "K", "L"],
     "6": ["M", "N", "O"], "7": ["P", "Q", "R", "S"], "8": ["T", "U", "V"], "9": ["W", "X", "Y", "Z"]
-]]
+]
 
 // Replaces each character in a phone number with an array of the
 // possible letters that could be in place of that character
