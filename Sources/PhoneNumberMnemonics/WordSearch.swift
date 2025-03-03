@@ -27,7 +27,7 @@ public func letters(for phoneNumber: String) -> [[String]] {
 // ["acd", "ace" "bcd", "bce"]
 public func permutations(of arrays: [[String]]) -> [String] {
     // YOU FILL IN HERE
-    return ""
+    return [""]
 }
 
 // Finds all of the possible strings of characters that a phone number
@@ -35,14 +35,14 @@ public func permutations(of arrays: [[String]]) -> [String] {
 // Uses letters(for:) and permutations(of:) to do this
 public func possibles(for phoneNumber: String) -> [String] {
     // YOU FILL IN HERE
-    return ""
+    return [""]
 }
 
 // Returns all of the words in a given *string* from the wordlist.txt file
 // using only words in the word list of minimum length ofMinLength
 public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String] {
     // YOU FILL IN HERE
-    return ""
+    return [""]
 }
 
 // Returns all possibles strings of characters that a phone number
@@ -50,7 +50,7 @@ public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String
 // greater than or equal to ofMinLength characters
 public func possiblesWithWholeWords(ofMinLength length: UInt, for phoneNumber: String) -> [String] {
     // YOU FILL IN HERE
-    return ""
+    return [""]
 }
 
 // Returns the phone number mnemonics that have the most words present in words.txt
@@ -60,12 +60,12 @@ public func possiblesWithWholeWords(ofMinLength length: UInt, for phoneNumber: S
 // that contain more than three words
 public func mostWords(for phoneNumber: String) -> [String] {
     // YOU FILL IN HERE
-    return ""
+    return [""]
 }
 
 // Returns the phone number mnemonics with the longest words from words.txt
 // If more than one word is tied for the longest, returns all of them
 public func longestWords(for phoneNumber: String) -> [String] {
     // YOU FILL IN HERE
-    return ""
+    return [""]
 }
