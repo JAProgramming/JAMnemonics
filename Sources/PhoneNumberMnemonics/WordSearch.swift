@@ -28,7 +28,9 @@ public func letters(for phoneNumber: String) -> [[String]] {
 public func permutations(of arrays: [[String]]) -> [String] {
     // YOU FILL IN HERE
     // had some help with chat gpt on the structure of higher order functions
-    return arrays.reduce([""]) {result, nextStep in result.flatMap { last in nextStep.map {last + $0}}}
+    return arrays.reduce([""]) 
+    {result, nextStep in result.flatMap 
+     { last in nextStep.map {last + $0}}}
 
 }
 
@@ -46,7 +48,11 @@ public func possibles(for phoneNumber: String) -> [String] {
 // using only words in the word list of minimum length ofMinLength
 public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String] {
     // YOU FILL IN HERE
-    return [""]
+    let wordList = Fruit()
+    let newPossibles = possibles(for: string)
+    let smallerList = wordList.word.reduce(newPossibles, length)
+    
+    return smallerList
 }
 
 // Returns all possibles strings of characters that a phone number
