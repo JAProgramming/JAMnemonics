@@ -50,7 +50,7 @@ public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String
     // YOU FILL IN HERE
     let wordList = Fruit()
     let newPossibles = possibles(for: string)
-    let smallerList = wordList.filter($0.count > length)
+    let smallerList = wordList.filter {$0.count > 5)
     
     return smallerList
 }
