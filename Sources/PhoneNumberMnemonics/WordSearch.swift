@@ -37,8 +37,8 @@ public func permutations(of arrays: [[String]]) -> [String] {
 // Uses letters(for:) and permutations(of:) to do this
 public func possibles(for phoneNumber: String) -> [String] {
     // YOU FILL IN HERE
-    let allLetters = letters(for phoneNumber)
-    let sequences = permutations(of allLetters)
+    let allLetters = letters(for: phoneNumber)
+    let sequences = permutations(of: allLetters)
     return sequences
 }
 
