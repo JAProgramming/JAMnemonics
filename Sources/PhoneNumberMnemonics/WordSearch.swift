@@ -15,7 +15,7 @@ let dialNumbers: [Character: [String]] =  ["2": ["A", "B", "C"], "3": ["D", "E",
 // For instance, 234 becomes [["A", "B", "C"], ["D", "E", "F"], ["G", "H", "I"]]
 public func letters(for phoneNumber: String) -> [[String]] {
     // YOU FILL IN HERE
-    let values = phoneNumber.map {dialNumbers[$0] ?? ["\($0)"]} // had help with the optional
+    let values = phoneNumber.map {dialNumbers[$0] ?? ["\($0)"]} // had help with the optional usimh LLM
     return values
 }
 
@@ -27,7 +27,6 @@ public func letters(for phoneNumber: String) -> [[String]] {
 // ["acd", "ace" "bcd", "bce"]
 public func permutations(of arrays: [[String]]) -> [String] {
     // YOU FILL IN HERE
-    // had some help with chat gpt on the structure of higher order functions
     return arrays.reduce([""]) 
     {result, nextStep in result.flatMap 
      { last in nextStep.map {last + $0}}}
