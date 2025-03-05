@@ -8,9 +8,9 @@ struct Fruit {
     let word: [String]
     
     init() {
+        let fileURL = URL(fileURLWithPath: "JAMnemonics/words.txt") // got from LLM
         do {
-            let fileName = "words.txt" 
-            let readFile = try String(contentsOfFile: fileName)
+            let readFile = try String(contentsOfFile: fileURL)
             word = readFile.components(separatedBy: "\n")
         } catch let error {
             Swift.print("Fatal Error: \(error.localizedDescription)")
