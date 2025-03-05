@@ -8,7 +8,8 @@ struct Fruit {
     let word: [String]
     
     init() {
-        let fileURL = URL(fileURLWithPath: "JAMnemonics/words.txt") // got from LLM
+         let fileURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+            .appendingPathComponent("JAMnemonics/words.txt")
         do {
             let readFile = try String(contentsOf: fileURL)
             word = readFile.components(separatedBy: "\n")
