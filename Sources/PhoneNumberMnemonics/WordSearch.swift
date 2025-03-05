@@ -15,7 +15,7 @@ let dialNumbers: [Character: [String]] =  ["2": ["A", "B", "C"], "3": ["D", "E",
 // For instance, 234 becomes [["A", "B", "C"], ["D", "E", "F"], ["G", "H", "I"]]
 public func letters(for phoneNumber: String) -> [[String]] {
     // YOU FILL IN HERE
-    let values = phoneNumber.map {dialNumbers[$0] + "\($0)"}
+    let values = phoneNumber.map {dialNumbers[$0] + ["\($0)"]}
     return values
 }
 
@@ -50,7 +50,7 @@ public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String
     // YOU FILL IN HERE
     let wordList = Fruit().word
     let newPossibles = possibles(for: string)
-    let smallerList = wordList.filter {wordList.contains($0) && $0.count >= length}
+    let smallerList = newPossibles.filter {wordList.contains($0) && $0.count >= length}
     
     return smallerList
 }
