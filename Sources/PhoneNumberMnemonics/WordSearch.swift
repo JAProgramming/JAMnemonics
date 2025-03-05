@@ -50,8 +50,6 @@ public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String
     let wordList = Fruit().word
     let newPossibles = possibles(for: string)
     return newPossibles.filter {wordList.contains($0) && $0.count >= length}
-    
-    //return smallerList
 }
 
 // Returns all possibles strings of characters that a phone number
@@ -59,7 +57,9 @@ public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String
 // greater than or equal to ofMinLength characters
 public func possiblesWithWholeWords(ofMinLength length: UInt, for phoneNumber: String) -> [String] {
     // YOU FILL IN HERE
-    return [""]
+    let wordList = Fruit().word
+    let newPossibles = possibles(for: string)
+    return newPossibles.filter {wordList.contains($0) && $0.count >= length}
 }
 
 // Returns the phone number mnemonics that have the most words present in words.txt
