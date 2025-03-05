@@ -9,7 +9,7 @@ struct Fruit {
     
     init() {
         do {
-            let fileName: String = "words.txt"
+            let fileName = Bundle.main.path(forResource: "words", ofType: "txt") // from stack overflow
             let readFile = try String(contentsOfFile: fileName)
             word = readFile.components(separatedBy: "\n")
         } catch let error {
