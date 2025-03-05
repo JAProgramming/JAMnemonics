@@ -9,13 +9,15 @@ struct Fruit {
     
     init() {
         do {
-            let fileName = Bundle.main.path(forResource: "words", ofType: "txt") // from stack overflow
+            if let fileName = Bundle.main.path(forResource: "words", ofType: "txt") {// from stack overflow and llm
             let readFile = try String(contentsOfFile: fileName)
             word = readFile.components(separatedBy: "\n")
         } catch let error {
             Swift.print("Fatal Error: \(error.localizedDescription)")
             word = []
-        }
+        } else {
+            Swift.print("Fatal Error: file not found"")
+            word = []
     }
 }
 
