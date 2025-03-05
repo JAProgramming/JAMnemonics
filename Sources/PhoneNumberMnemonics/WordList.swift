@@ -10,7 +10,7 @@ struct Fruit {
     init() {
         let fileManager = FileManager.default
         let currentPath = fileManager.currentDirectoryPath
-        let filePath = "\(currentPath)\words.txt"
+        let filePath = "\(currentPath)/words.txt"
         do {
             let readFile = try String(contentsOfFile: filePath)
             word = readFile.components(separatedBy: "\n")
