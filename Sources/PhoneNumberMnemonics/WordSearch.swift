@@ -15,7 +15,7 @@ let dialNumbers: [Character: [String]] =  ["2": ["A", "B", "C"], "3": ["D", "E",
 // For instance, 234 becomes [["A", "B", "C"], ["D", "E", "F"], ["G", "H", "I"]]
 public func letters(for phoneNumber: String) -> [[String]] {
     // YOU FILL IN HERE
-    let values = phoneNumber.compactMap{dialNumbers[$0]}
+    let values = phoneNumber.map {dialNumbers[$0] + "\($0)"}
     return values
 }
 
@@ -48,9 +48,9 @@ public func possibles(for phoneNumber: String) -> [String] {
 // using only words in the word list of minimum length ofMinLength
 public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String] {
     // YOU FILL IN HERE
-    let wordList = Fruit()
+    let wordList = Fruit().word
     let newPossibles = possibles(for: string)
-    let smallerList = wordList.filter {$0.count > 5)
+    let smallerList = wordList.filter {wordList.contains($0) && $0.count >= length}
     
     return smallerList
 }
