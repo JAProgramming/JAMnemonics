@@ -47,6 +47,7 @@ public func possibles(for phoneNumber: String) -> [String] {
 // using only words in the word list of minimum length ofMinLength
 public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String] {
     // YOU FILL IN HERE
+    // Used some help from LLM with the structure of the return
     let wordList = Set(Fruit().word.map { $0.capitalized }) 
     let capitalizedString = string.uppercased() 
 
