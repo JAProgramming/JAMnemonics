@@ -15,7 +15,7 @@ let dialNumbers: [Character: [String]] =  ["2": ["A", "B", "C"], "3": ["D", "E",
 // For instance, 234 becomes [["A", "B", "C"], ["D", "E", "F"], ["G", "H", "I"]]
 public func letters(for phoneNumber: String) -> [[String]] {
     // YOU FILL IN HERE
-    let values = phoneNumber.map {dialNumbers[$0] ?? ["\($0)"]} // had help with the optional usimh LLM
+    let values = phoneNumber.map {dialNumbers[$0] ?? ["\($0)"]} // had help with the optional using LLM
     return values
 }
 
@@ -47,7 +47,7 @@ public func possibles(for phoneNumber: String) -> [String] {
 // using only words in the word list of minimum length ofMinLength
 public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String] {
     // YOU FILL IN HERE
-    // Used some help from LLM with the structure of the return
+    // Used some help from LLM with the grammer of the return
     let wordList = Set(Fruit().word.map { $0.capitalized }) 
     let capitalizedString = string.uppercased() 
 
@@ -61,10 +61,9 @@ public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String
 // greater than or equal to ofMinLength characters
 public func possiblesWithWholeWords(ofMinLength length: UInt, for phoneNumber: String) -> [String] {
     // YOU FILL IN HERE
-    let wordList = Fruit().word
-    Swift.print(wordList)
-    let newPossibles = possibles(for: phoneNumber)
-    return newPossibles.filter {wordList.contains($0) && $0.count >= length}
+    let newPossibles = possibles(for: phoneNumber).flatMap{$0}
+    let possibleWord = wordsInString(string: newPossibles, ofMinLength: length)
+    return possibleWord
 }
 
 // Returns the phone number mnemonics that have the most words present in words.txt
