@@ -59,6 +59,7 @@ public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String
 public func possiblesWithWholeWords(ofMinLength length: UInt, for phoneNumber: String) -> [String] {
     // YOU FILL IN HERE
     let wordList = Fruit().word
+    Swift.print(wordList)
     let newPossibles = possibles(for: phoneNumber)
     return newPossibles.filter {wordList.contains($0) && $0.count >= length}
 }
