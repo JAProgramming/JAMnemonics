@@ -46,10 +46,10 @@ public func possibles(for phoneNumber: String) -> [String] {
 // Returns all of the words in a given *string* from the wordlist.txt file
 // using only words in the word list of minimum length ofMinLength
 public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String] {
-    // YOU FILL IN HERE
-    let wordList = Set(Fruit().word)
-    let newPossibles = possibles(for: string)
-    return newPossibles.filter {wordList.contains($0) && $0.count >= length}
+    let wordList = Set(Fruit().word) // Convert to Set for fast lookup
+    let newPossibles = possibles(for: string) // Generate possible letter sequences
+
+    return newPossibles.filter { wordList.contains($0) && $0.count >= Int(length) }
 }
 
 // Returns all possibles strings of characters that a phone number
