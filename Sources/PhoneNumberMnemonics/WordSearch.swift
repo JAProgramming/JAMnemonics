@@ -61,8 +61,8 @@ public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String
 // greater than or equal to ofMinLength characters
 public func possiblesWithWholeWords(ofMinLength length: UInt, for phoneNumber: String) -> [String] {
     // YOU FILL IN HERE
-    let newPossibles = possibles(for: phoneNumber).flatMap{$0}
-    let possibleWord = wordsInString(string: newPossibles, ofMinLength: length)
+    let newPossibles = possibles(for: phoneNumber)
+    let possibleWord = newPossibles.flatMap { wordsInString(for: $0, ofMinLength: length)
     return possibleWord
 }
 
