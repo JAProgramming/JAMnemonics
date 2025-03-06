@@ -6,14 +6,11 @@ import Foundation
 // YOU FILL IN HERE
 struct Fruit {
     let word: [String]
+    let everything = try String(contentsOfFile: "words.txt"
     
     init() {
-        let fileManager = FileManager.default
-        let currentPath = fileManager.currentDirectoryPath
-        let filePath = "\(currentPath)/words.txt"
         do {
-            let readFile = try String(contentsOfFile: filePath)
-            word = readFile.components(separatedBy: "\n")
+            word = everything.components(separatedBy: "\n")
         } catch let error {
             Swift.print("Fatal Error: \(error.localizedDescription)")
             word = []
