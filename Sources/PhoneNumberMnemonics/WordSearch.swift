@@ -48,7 +48,7 @@ public func possibles(for phoneNumber: String) -> [String] {
 public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String] {
     // YOU FILL IN HERE
 
-    let wordList = Fruit().word
+    let wordList = Set(Fruit().word)
     
     return wordList.filter { word in
         string.contains(word) && word.count >= length 
