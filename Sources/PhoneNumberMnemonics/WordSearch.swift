@@ -73,16 +73,13 @@ public func possiblesWithWholeWords(ofMinLength length: UInt, for phoneNumber: S
 // that contain more than three words
 public func mostWords(for phoneNumber: String) -> [String] {
     // YOU FILL IN HER
-    // YOU FILL IN HERE
-    let wordList = Fruit().word
-    let newPossibles = possibles(for: phoneNumber)
-    let allPossibles = newPossibles.filter {word in possiblesWithWholeWords($0, $0.count())}
-    return allPossibles
+    return [""]
 }
 
 // Returns the phone number mnemonics with the longest words from words.txt
 // If more than one word is tied for the longest, returns all of them
 public func longestWords(for phoneNumber: String) -> [String] {
     // YOU FILL IN HERE
-    return [""]
+    return[""]
+    
 }
