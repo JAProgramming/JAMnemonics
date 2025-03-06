@@ -46,10 +46,19 @@ public func possibles(for phoneNumber: String) -> [String] {
 // Returns all of the words in a given *string* from the wordlist.txt file
 // using only words in the word list of minimum length ofMinLength
 public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String] {
-    let wordList = Set(Fruit().word) // Convert to Set for fast lookup
-    let newPossibles = possibles(for: string) // Generate possible letter sequences
+    // YOU FILL IN HERE
+       let word: [String]  // Store words from file
 
-    return newPossibles.filter { wordList.contains($0) && $0.count >= Int(length) }
+    do {
+        let everything = try String(contentsOfFile: "words.txt") // Read file content
+        word = everything.components(separatedBy: "\n") // Split into an array
+    } catch {
+        word = [] // If reading fails, initialize an empty array
+        print("Error reading file: \(error)")
+    }
+    let wordList = word
+    let newPossibles = possibles(for: string)
+    return newPossibles.filter {wordList.contains($0) && $0.count >= length}
 }
 
 // Returns all possibles strings of characters that a phone number
@@ -68,7 +77,6 @@ public func possiblesWithWholeWords(ofMinLength length: UInt, for phoneNumber: S
 // words.txt, it will return both of them, if the are no other mnemonics
 // that contain more than three words
 public func mostWords(for phoneNumber: String) -> [String] {
-    // YOU FILL IN HERE
     return [""]
 }
 
