@@ -47,11 +47,10 @@ public func possibles(for phoneNumber: String) -> [String] {
 // using only words in the word list of minimum length ofMinLength
 public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String] {
     // YOU FILL IN HERE
-
-    let wordList = Set(Fruit().word)
+        let wordList = Set(Fruit().word)
     
     return wordList.filter { word in
-        string.contains(word) && word.count >= length 
+        string.range(of: word) != nil && word.count >= length
     }
 }
 
