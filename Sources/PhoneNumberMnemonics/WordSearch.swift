@@ -47,16 +47,8 @@ public func possibles(for phoneNumber: String) -> [String] {
 // using only words in the word list of minimum length ofMinLength
 public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String] {
     // YOU FILL IN HERE
-       let word: [String]  // Store words from file
 
-    do {
-        let everything = try String(contentsOfFile: "words.txt") // Read file content
-        word = everything.components(separatedBy: "\r\n") // Split into an array
-    } catch {
-        word = [] // If reading fails, initialize an empty array
-        print("Error reading file: \(error)")
-    }
-    let wordList = word
+    let wordList = Fruit().word
     let newPossibles = possibles(for: string)
     return newPossibles.filter {wordList.contains($0) && $0.count >= length}
 }
@@ -77,7 +69,10 @@ public func possiblesWithWholeWords(ofMinLength length: UInt, for phoneNumber: S
 // words.txt, it will return both of them, if the are no other mnemonics
 // that contain more than three words
 public func mostWords(for phoneNumber: String) -> [String] {
-    return [""]
+    // YOU FILL IN HERE
+    let wordList = Fruit().word
+    let newPossibles = possibles(for: phoneNumber)
+    let allPermutations = 
 }
 
 // Returns the phone number mnemonics with the longest words from words.txt
