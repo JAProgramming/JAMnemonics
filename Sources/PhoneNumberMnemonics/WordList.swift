@@ -1,19 +1,13 @@
-// WordList.swift
-// Created for Assignment 5 of CSI 380
+struct Fruit {
+    let word: [String]  // Store words from file
 
-import Foundation
-
-// YOU FILL IN HERE
-struct Fruit 
-{
-    let word: [String]
-    let everything = try String(contentsOfFile: "words.txt"
-    
-    init() 
-        {
-            word = everything.components(separatedBy: "\n")
+    init() {
+        do {
+            let everything = try String(contentsOfFile: "words.txt") // Read file content
+            word = everything.components(separatedBy: "\n") // Split into an array
+        } catch {
+            word = [] // If reading fails, initialize an empty array
+            print("Error reading file: \(error)")
         }
+    }
 }
-
-// You'll want to create a mechanism here for loading and querying
-// words.txt. It's up to you how you do this. You may consider a struct.
