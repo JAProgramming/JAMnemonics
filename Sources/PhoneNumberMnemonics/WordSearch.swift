@@ -51,8 +51,8 @@ public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String
     let wordList = Fruit().word
     
     return wordList.filter { word in
-        string.contains(word) && word.count >= length
-    
+        string.contains(word) && word.count >= length 
+    }
 }
 
 // Returns all possibles strings of characters that a phone number
