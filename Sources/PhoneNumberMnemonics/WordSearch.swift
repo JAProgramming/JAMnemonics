@@ -47,7 +47,7 @@ public func possibles(for phoneNumber: String) -> [String] {
 // using only words in the word list of minimum length ofMinLength
 public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String] {
     // YOU FILL IN HERE
-    // Used some help from LLM with the grammer of the return
+        // Used some help from LLM with the grammer of the capitals in the return
     let wordList = Set(Fruit().word.map { $0.capitalized }) 
     let capitalizedString = string.uppercased() 
 
@@ -62,8 +62,7 @@ public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String
 public func possiblesWithWholeWords(ofMinLength length: UInt, for phoneNumber: String) -> [String] {
     // YOU FILL IN HERE
     let newPossibles = possibles(for: phoneNumber)
-    let possibleWords = newPossibles.map { wordsInString($0, ofMinLength: length) }
-    return possibleWords.flatMap { $0 }
+    return newPossibles.filter {word in wordsInString(word, ofMinLength: length).contains(word)}
 }
 
 // Returns the phone number mnemonics that have the most words present in words.txt
@@ -72,7 +71,7 @@ public func possiblesWithWholeWords(ofMinLength length: UInt, for phoneNumber: S
 // words.txt, it will return both of them, if the are no other mnemonics
 // that contain more than three words
 public func mostWords(for phoneNumber: String) -> [String] {
-    // YOU FILL IN HER
+    // YOU FILL IN HERE
     return [""]
 }
 
@@ -80,6 +79,12 @@ public func mostWords(for phoneNumber: String) -> [String] {
 // If more than one word is tied for the longest, returns all of them
 public func longestWords(for phoneNumber: String) -> [String] {
     // YOU FILL IN HERE
-    return[""]
-    
+    if(phoneNumber == "") 
+        return [""]
+    let newPossibles = possibles(for: phoneNumber)
+    let longest = newPossibles.flatMap {word in wordsInString(word, ofMinLength: 1)}
+    let length = longest.map {$0.count}.max()
+
+    return length.filter{$0 == length}
+
 }
