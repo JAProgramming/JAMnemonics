@@ -1,6 +1,6 @@
 // WordSearch.swift
 // Created for Assignment 5 of CSI 380
-?? CITATION
+// CITATION
 // I used chat gpt in order to debug my code, I also use comments to show where it helped
 
 import Foundation
