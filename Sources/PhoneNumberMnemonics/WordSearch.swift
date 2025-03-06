@@ -1,5 +1,7 @@
 // WordSearch.swift
 // Created for Assignment 5 of CSI 380
+?? CITATION
+// I used chat gpt in order to debug my code, I also use comments to show where it helped
 
 import Foundation
 
@@ -86,7 +88,7 @@ public func longestWords(for phoneNumber: String) -> [String] {
     
     let newPossibles = possibles(for: phoneNumber)
     let longest = newPossibles.flatMap {word in wordsInString(word, ofMinLength: 1)}
-    let length = longest.map {$0.count}.max() ?? 0
+    let length = longest.map {$0.count}.max() ?? 0 // LLM helped with the length logic
 
     return longest.filter{$0.count == length}
 
