@@ -4,18 +4,15 @@
 import Foundation
 
 // YOU FILL IN HERE
-struct Fruit {
+struct Fruit 
+{
     let word: [String]
     let everything = try String(contentsOfFile: "words.txt"
     
-    init() {
-        do {
+    init() 
+        {
             word = everything.components(separatedBy: "\n")
-        } catch let error {
-            Swift.print("Fatal Error: \(error.localizedDescription)")
-            word = []
-        } 
-    }
+        }
 }
 
 // You'll want to create a mechanism here for loading and querying
