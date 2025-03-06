@@ -47,8 +47,12 @@ public func possibles(for phoneNumber: String) -> [String] {
 // using only words in the word list of minimum length ofMinLength
 public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String] {
     // YOU FILL IN HERE
-    let wordList = Fruit().word
-    return wordList.filter {wordList.contains($0) && $0.count >= length}
+    let wordList = Set(Fruit().word.map { $0.capitalized }) // Capitalize first letter of words
+    let capitalizedString = string.uppercased() // Convert input string to uppercase
+
+    return wordList.filter { word in
+        capitalizedString.contains(word.uppercased()) && word.count >= length
+    }
 }
 
 // Returns all possibles strings of characters that a phone number
