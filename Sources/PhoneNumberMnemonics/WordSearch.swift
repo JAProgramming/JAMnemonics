@@ -78,9 +78,9 @@ public func mostWords(for phoneNumber: String) -> [String] {
     }
 
     let newPossibles = possibles(for: phoneNumber)
-    let wordMap = newPossibles.flatMap {word in wordInString(word, ofMinLength: 1)}
-    let counter = wordMap.map {$0, $0.1}.max() ?? 0
-    return wordMap.filter {$0.1 == counter}.map {$9.0} //Had help from LLM on the counter and return
+    let wordMap = newPossibles.flatMap {word in wordsInString(word, ofMinLength: 1).count}
+    let counter = wordMap.map {$0.1}.max() ?? 0
+    return wordMap.filter {$0.1 == counter}.map {$0.0} //Had help from LLM on the counter and return
 }
 
 // Returns the phone number mnemonics with the longest words from words.txt
@@ -92,7 +92,7 @@ public func longestWords(for phoneNumber: String) -> [String] {
         return [""]
     }
     let allPossibles = possibles(for: phoneNumber)
-    let longest = allPossibles.flatMap {word in wordInString(word, ofMinLength: 1)}
+    let longest = allPossibles.flatMap {word in wordsInString(word, ofMinLength: 1)}
 
     let length = longest.map {$0.count}.max() ?? 0
 
