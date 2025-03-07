@@ -78,7 +78,7 @@ public func mostWords(for phoneNumber: String) -> [String] {
     }
 
     let newPossibles = possibles(for: phoneNumber)
-    let wordMap = newPossibles.flatMap {word in wordsInString(word, ofMinLength: 1).count}
+    let wordMap = newPossibles.map {word in wordsInString(word, ofMinLength: 1).count}
     let counter = wordMap.map {$0.1}.max() ?? 0
     return wordMap.filter {$0.1 == counter}.map {$0.0} //Had help from LLM on the counter and return
 }
@@ -96,5 +96,5 @@ public func longestWords(for phoneNumber: String) -> [String] {
 
     let length = longest.map {$0.count}.max() ?? 0
 
-    return longest.filter {$0.count == length}
+    return longest.filter {$0.1 == length}.map {$0.0}
 }
