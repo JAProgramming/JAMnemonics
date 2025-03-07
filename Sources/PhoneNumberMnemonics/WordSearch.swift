@@ -62,7 +62,7 @@ public func wordsInString(_ string: String, ofMinLength length: UInt) -> [String
 public func possiblesWithWholeWords(ofMinLength length: UInt, for phoneNumber: String) -> [String] {
     // YOU FILL IN HERE
     let newPossibles = possibles(for: phoneNumber)
-    return newPossibles.filter {word in !wordsInString(word, ofMinLength: length).isEmpty
+    return newPossibles.filter {word in !wordsInString(word, ofMinLength: length).isEmpty}
 }
 
 // Returns the phone number mnemonics that have the most words present in words.txt
