@@ -1,5 +1,6 @@
 // WordSearch.swift
 // Created for Assignment 5 of CSI 380
+//Used chatgpt as the LLM mentioned throughtout the code
 
 import Foundation
 
