@@ -76,7 +76,7 @@ public func mostWords(for phoneNumber: String) -> [String] {
         return [""]
     }
     let allPossibles = possibles(for: phoneNumber)
-    let wordMap = allPossibles.map {word in wordsInString(word, ofMinLength: 1)}
+    let wordMap = allPossibles.map {word in wordsInString(word, ofMinLength: 1).count}
 
     let count = wordMap.map { $0.1 }.max() ?? 0
 
