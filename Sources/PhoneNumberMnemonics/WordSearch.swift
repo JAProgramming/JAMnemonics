@@ -1,7 +1,5 @@
 // WordSearch.swift
 // Created for Assignment 5 of CSI 380
-// CITATION
-// I used chat gpt in order to debug my code, I also use comments to show where it helped
 
 import Foundation
 
@@ -74,22 +72,29 @@ public func possiblesWithWholeWords(ofMinLength length: UInt, for phoneNumber: S
 // that contain more than three words
 public func mostWords(for phoneNumber: String) -> [String] {
     // YOU FILL IN HERE
-    return [""]
+    if(phoneNumber == "")
+    {
+        return [""]
+    }
+
+    let newPossibles = possibles(for: phoneNumber)
+    let wordMap = newPossibles.flatMap {word in wordInString(word, ofMinLength: 1)}
+    let counter = wordMap.map {$0, $0.1}.max() ?? 0
+    return wordMap.filter {$0.1 == counter}.map {$9.0} //Had help from LLM on the counter and return
 }
 
 // Returns the phone number mnemonics with the longest words from words.txt
 // If more than one word is tied for the longest, returns all of them
 public func longestWords(for phoneNumber: String) -> [String] {
     // YOU FILL IN HERE
-    if(phoneNumber == "") 
+    if (phoneNumber == "")
     {
-         return [""]
+        return [""]
     }
-    
-    let newPossibles = possibles(for: phoneNumber)
-    let longest = newPossibles.flatMap {word in wordsInString(word, ofMinLength: 1)}
-    let length = longest.map {$0.count}.max() ?? 0 // LLM helped with the length logic
+    let allPossibles = possibles(for: phoneNumber)
+    let longest = allPossibles.flatMap {word in wordInString(word, ofMinLength: 1)}
 
-    return longest.filter{$0.count == length}
+    let length = longest.map {$0.count}.max() ?? 0
 
+    return longest.filter {$0.count == length}
 }
