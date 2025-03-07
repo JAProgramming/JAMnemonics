@@ -87,5 +87,5 @@ public func longestWords(for phoneNumber: String) -> [String] {
 
     let length = longest.map {$0.count}.max() ?? 0
 
-    return longest.filter {$0.1 == length}.map {$0.0}
+    return longest.filter {$0.count == length}}
 }
